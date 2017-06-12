@@ -45,8 +45,6 @@ public class UsuarioTest {
 
 		Usuario usuario = new Usuario("Lucas");
 		
-		assertEquals("Lucas", usuario.devolverNombre());
-		
+		assertEquals("Lucas", usuario.devolverNombre());	
     }
-
 }

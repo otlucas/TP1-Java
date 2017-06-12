@@ -14,7 +14,6 @@ public class MensajeTest {
 		Mensaje mensaje = new Mensaje("Lucas", "Agustin", "Texto");
 		
 		assertEquals("Lucas", mensaje.devolverRemitente());
-		
     }
 	
 	@Test
@@ -23,8 +22,6 @@ public class MensajeTest {
 		Mensaje mensaje = new Mensaje("Lucas", "Agustin", "Texto");
 		
 		assertEquals("Agustin", mensaje.devolverDestinatario());
-		
-        
     }
 	
 	@Test
@@ -32,9 +29,6 @@ public class MensajeTest {
 
 		Mensaje mensaje = new Mensaje("Lucas", "Agustin", "Texto");
 		
-		assertEquals("Texto", mensaje.devolverTexto());
-		
-        
+		assertEquals("Texto", mensaje.devolverTexto());   
     }
-
 }

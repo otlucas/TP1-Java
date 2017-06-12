@@ -26,7 +26,5 @@ public class Mensaje {
 	public String devolverRemitente() {
 		/** Devuelve el remiten del mensaje */
 		return this.remitente;
-	}
-
-	
+	}	
 }

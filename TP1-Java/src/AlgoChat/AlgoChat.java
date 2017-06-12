@@ -32,8 +32,6 @@ public class AlgoChat {
 		
 	}
 	
-	
-
 	public int cantidadDeChatsIndividuales() {
 		/** Devuelve la cantidad de conversaciones con usuarios */
 		if(this.conversaciones == null){
@@ -112,7 +110,6 @@ public class AlgoChat {
 				break;
 			}
 		}
-		
 	}
 
 	public int cantidadTotalMensajesRecibidos() {
@@ -154,7 +151,6 @@ public class AlgoChat {
 				break;
 			}
 		}
-		
 	}
 
 	public int cantidadMensajesEnviadosA(String nombredecontacto) throws ContactoNoExisteExcepcion {
@@ -167,8 +163,7 @@ public class AlgoChat {
 				return this.conversaciones.get(x).cantidadMensajesEnviados();
 			}
 		}
-		return 0; //excepcion pls
-		
+		return 0;
 	}
 
 	public ArrayList<String> obtenerConversacionCon(String nombredecontacto) throws ContactoNoExisteExcepcion {
@@ -181,7 +176,7 @@ public class AlgoChat {
 				return this.conversaciones.get(x).obtenerConversacion(this.usuario);
 			}
 		}
-		return null; //excepcion pls
+		return null;
 	}
 	
 	public void crearGrupo(String nombre) throws GrupoYaExisteExcepcion{
@@ -263,8 +258,6 @@ public class AlgoChat {
 				break;
 			}
 		}
-		
-		
 	}
 
 	public void enviarMensajeAGrupo(String nombredelgrupo, String texto) throws GrupoNoExisteExcepcion {
@@ -287,7 +280,6 @@ public class AlgoChat {
 				break;
 			}
 		}
-		
 	}
 
 	public int cantidadMensajesRecibidosDelGrupo(String nombredelgrupo) throws GrupoNoExisteExcepcion {
@@ -339,8 +331,6 @@ public class AlgoChat {
 				this.conversaciones.get(x).borrarConversacion(this.usuario);
 			}
 		}
-		
-		
 	}
 
 	public void borrarMensajesDelGrupo(String nombredelgrupo) throws GrupoNoExisteExcepcion {

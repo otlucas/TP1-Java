@@ -15,11 +15,11 @@ public class UsuarioTest {
 		
 		assertEquals(0, usuario.cantidadDeMensajesEnviados());
 		
-		usuario.agregarEnviado();
+		usuario.agregarEnviadoSinMensaje();
 		
 		assertEquals(1, usuario.cantidadDeMensajesEnviados());
 		
-		usuario.agregarEnviado();
+		usuario.agregarEnviadoSinMensaje();
 		
 		assertEquals(2, usuario.cantidadDeMensajesEnviados());
     }
@@ -31,11 +31,11 @@ public class UsuarioTest {
 		
 		assertEquals(0, usuario.cantidadTotalMensajesRecibidos());
 		
-		usuario.agregarRecibido();
+		usuario.agregarRecibidoSinMensaje();
 		
 		assertEquals(1, usuario.cantidadTotalMensajesRecibidos());
 		
-		usuario.agregarRecibido();
+		usuario.agregarRecibidoSinMensaje();
 		
 		assertEquals(2, usuario.cantidadTotalMensajesRecibidos());
     }
@@ -45,6 +45,8 @@ public class UsuarioTest {
 
 		Usuario usuario = new Usuario("Lucas");
 		
-		assertEquals("Lucas", usuario.devolverNombre());	
+		assertEquals("Lucas", usuario.devolverNombre());
+		
     }
+
 }

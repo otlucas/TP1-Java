@@ -13,7 +13,7 @@ public class ConversacionTest {
 	@Test
     public void testdevolverNombreContacto() {
 		
-	Usuario usuario = new Usuario("Lucas");
+		Usuario usuario = new Usuario("Lucas");
 
         Conversacion conversacion = new Conversacion(usuario);
         
@@ -24,7 +24,7 @@ public class ConversacionTest {
 	@Test
     public void testagregarMensaje() {
 		
-	Usuario usuario = new Usuario("Agustin");
+		Usuario usuario = new Usuario("Agustin");
 
         Conversacion conversacion = new Conversacion(usuario);
         
@@ -43,7 +43,7 @@ public class ConversacionTest {
 	@Test
     public void testobtenerConversacion() {
 		
-	Usuario usuario = new Usuario("Agustin");
+		Usuario usuario = new Usuario("Agustin");
 
         Conversacion conversacion = new Conversacion(usuario);
         
@@ -64,7 +64,7 @@ public class ConversacionTest {
 	@Test
     public void testborrarConversacion() {
 		
-	Usuario usuario = new Usuario("Agustin");
+		Usuario usuario = new Usuario("Agustin");
 
         Conversacion conversacion = new Conversacion(usuario);
         
@@ -87,7 +87,7 @@ public class ConversacionTest {
 	@Test
     public void testcantidadMensajesEnviados() {
 		
-	Usuario usuario = new Usuario("Agustin");
+		Usuario usuario = new Usuario("Agustin");
 
         Conversacion conversacion = new Conversacion(usuario);
         
@@ -106,11 +106,36 @@ public class ConversacionTest {
 	@Test
     public void testdevolverNombreGrupo() {
 		
-	Grupo grupo = new Grupo("Mañana");
+		Grupo grupo = new Grupo("Mañana");
 
         Conversacion conversacion = new Conversacion(grupo);
         
         assertEquals("Mañana", conversacion.devolverNombreDeGrupo());
         
     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

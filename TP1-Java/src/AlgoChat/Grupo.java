@@ -7,6 +7,7 @@ public class Grupo {
 	int cantidadMensajesRecibidos;
 	int cantidadMensajesEnviados;
 	String nombre;
+	Conversacion conversacion;
 
 	public Grupo(String nombredelgrupo){
 		/** Crea una instancia de grupo y asigna la cadena pasada por parametro como su nombre */
@@ -14,6 +15,8 @@ public class Grupo {
 		this.cantidadMensajesRecibidos = 0;
 		this.cantidadMensajesEnviados = 0;
 		this.integrantes = new ArrayList<Usuario>();
+		this.conversacion = new Conversacion(this);
+		
 	}
 
 	public String devolverNombre() {
@@ -33,8 +36,9 @@ public class Grupo {
 		/** Devuelve la cantidad de miembros del grupo */
 		return this.integrantes.size() + 1;
 	}
-	
-	public void agregarRecibidoDe(String nombrederemitente) throws ContactoNoExisteEnGrupo {
+
+
+	public void agregarRecibidoDe(String nombrederemitente, Mensaje nuevoMensaje) throws ContactoNoExisteEnGrupo {
 		/** Agrega mensaje recibido a todos los integrantes del grupo menos al remitente
 		 */
 		if(!this.existeContacto(nombrederemitente)){
@@ -42,30 +46,34 @@ public class Grupo {
 		}
 		for(int x = 0; x < this.integrantes.size(); x++){
 			if(this.integrantes.get(x).devolverNombre() != nombrederemitente){
-				this.integrantes.get(x).agregarRecibido();
+				this.integrantes.get(x).agregarRecibidoSinMensaje();
 			}else{
-				this.integrantes.get(x).agregarEnviado();
+				this.integrantes.get(x).agregarEnviadoSinMensaje();
 			}
 		}
 		this.cantidadMensajesRecibidos++;
+		this.conversacion.agregarMensaje(nuevoMensaje);
 	}
 
-	public void agregarEnviado() {
+	public void agregarEnviado(Mensaje nuevoMensaje) {
 		/** Agrega mensaje recibido a todos los integrantes del grupo
 		 */
 		for(int x = 0; x < this.integrantes.size(); x++){
-			this.integrantes.get(x).agregarRecibido();
+			this.integrantes.get(x).agregarRecibidoSinMensaje();
 		}
 		this.cantidadMensajesEnviados++;
+		this.conversacion.agregarMensaje(nuevoMensaje);
 	}
 
 	public int devolverCantidadRecibidos() {
 		/** Devuelve la cantidad de mensajes recibidos a traves del grupo */
+		
 		return this.cantidadMensajesRecibidos;
 	}
 
 	public int devolverCantidadEnviados() {
 		/** Devuelve la cantidad de mensajes enviados a traves del grupo */
+		
 		return this.cantidadMensajesEnviados;
 	}
 
@@ -83,8 +91,11 @@ public class Grupo {
 		for(int x = 0; x < this.integrantes.size(); x++){
 			if(this.integrantes.get(x).devolverNombre() != nombredelRemitente){
 				this.integrantes.get(x).cantidadmensajesrecibidos--;
+				
 			}else{
 				this.integrantes.get(x).cantidadmensajesenviados--;
+				
+			
 			}
 		}
 		this.cantidadMensajesRecibidos--;
@@ -99,4 +110,5 @@ public class Grupo {
 		}
 		return false;
 	}
+
 }

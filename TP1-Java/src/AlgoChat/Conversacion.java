@@ -27,7 +27,9 @@ public class Conversacion {
 
 	public void agregarMensaje(Mensaje nuevoMensaje) {
 		/** Agrega un mensaje a la lista de mensajes */
+		
 		this.mensajes.add(nuevoMensaje);
+		
 	}
 
 	public int cantidadMensajesEnviados() {
@@ -53,8 +55,10 @@ public class Conversacion {
 		}
 		listaDeMensajes.add(0, "");
 		return listaDeMensajes;
+		
 	}
-	
+		
+
 	public String devolverNombreDeGrupo() {
 		/** Devuelve el nombre del grupo con el cual se tiene la conversacion */
 		return this.grupo.devolverNombre();
@@ -73,6 +77,8 @@ public class Conversacion {
 		
 		}
 		this.mensajes = new ArrayList<Mensaje>();
+			
+		
 	}
 
 	public void borrarConversacionGrupal(Usuario usuarioprincipal, Grupo grupo) {
@@ -88,5 +94,18 @@ public class Conversacion {
 		
 		}
 		this.mensajes = new ArrayList<Mensaje>();
+		
 	}	
+
 }
+
+
+
+
+
+
+
+
+
+
+

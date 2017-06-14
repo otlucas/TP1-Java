@@ -17,7 +17,7 @@ public class GrupoTest {
 		algoChat.crearGrupo("Mañana");
 		algoChat.agregarContactoAGrupo("Agustin", "Mañana");
 		
-		assertEquals(2, algoChat.grupos.get(0).cantidadMiembros());
+		assertEquals(2, algoChat.grupos.get("Mañana").cantidadMiembros());
 		
         
     }
@@ -32,8 +32,8 @@ public class GrupoTest {
 		algoChat.agregarContactoAGrupo("Agustin", "Mañana");
 		algoChat.enviarMensajeAGrupo("Mañana", "Que haces");
 		
-		assertEquals(1, algoChat.grupos.get(0).integrantes.get(0).cantidadTotalMensajesRecibidos());
-		assertEquals(1, algoChat.grupos.get(0).devolverCantidadEnviados());
+		assertEquals(1, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadTotalMensajesRecibidos());
+		assertEquals(1, algoChat.grupos.get("Mañana").devolverCantidadEnviados());
 		
         
     }
@@ -48,8 +48,8 @@ public class GrupoTest {
 		algoChat.agregarContactoAGrupo("Agustin", "Mañana");
 		algoChat.recibirMensajeDeGrupo("Mañana", "Agustin", "texto");
 		
-		assertEquals(1, algoChat.grupos.get(0).integrantes.get(0).cantidadDeMensajesEnviados());
-		assertEquals(1, algoChat.grupos.get(0).devolverCantidadRecibidos());
+		assertEquals(1, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadDeMensajesEnviados());
+		assertEquals(1, algoChat.grupos.get("Mañana").devolverCantidadRecibidos());
 		
         
     }
@@ -71,7 +71,7 @@ public class GrupoTest {
 		algoChat.agregarContactoAGrupo("Agustin3", "Mañana");
 		algoChat.agregarContactoAGrupo("Agustin4", "Mañana");
 		
-		assertEquals(6, algoChat.grupos.get(0).cantidadMiembros());
+		assertEquals(6, algoChat.grupos.get("Mañana").cantidadMiembros());
 		
         
     }
@@ -90,7 +90,7 @@ public class GrupoTest {
 		algoChat.enviarMensajeAGrupo("Mañana", "Que haces");
 		
 		
-		assertEquals(4, algoChat.grupos.get(0).devolverCantidadEnviados());
+		assertEquals(4, algoChat.grupos.get("Mañana").devolverCantidadEnviados());
 		
         
     }
@@ -109,7 +109,7 @@ public class GrupoTest {
 		algoChat.recibirMensajeDeGrupo("Mañana", "Agustin", "texto");
 		algoChat.recibirMensajeDeGrupo("Mañana", "Agustin", "texto");
 		
-		assertEquals(5, algoChat.grupos.get(0).devolverCantidadRecibidos());
+		assertEquals(5, algoChat.grupos.get("Mañana").devolverCantidadRecibidos());
 		
         
     }
@@ -126,18 +126,18 @@ public class GrupoTest {
 		algoChat.enviarMensajeAGrupo("Mañana", "Que haces");
 		algoChat.enviarMensajeAGrupo("Mañana", "Que haces");
 		
-		assertEquals(3, algoChat.grupos.get(0).integrantes.get(0).cantidadTotalMensajesRecibidos());
-		assertEquals(3, algoChat.grupos.get(0).devolverCantidadEnviados());
+		assertEquals(3, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadTotalMensajesRecibidos());
+		assertEquals(3, algoChat.grupos.get("Mañana").devolverCantidadEnviados());
 		
-		algoChat.grupos.get(0).restarMensajeEnviado();
+		algoChat.grupos.get("Mañana").restarMensajeEnviado();
 		
-		assertEquals(2, algoChat.grupos.get(0).integrantes.get(0).cantidadTotalMensajesRecibidos());
-		assertEquals(2, algoChat.grupos.get(0).devolverCantidadEnviados());
+		assertEquals(2, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadTotalMensajesRecibidos());
+		assertEquals(2, algoChat.grupos.get("Mañana").devolverCantidadEnviados());
 		
-		algoChat.grupos.get(0).restarMensajeEnviado();
+		algoChat.grupos.get("Mañana").restarMensajeEnviado();
 		
-		assertEquals(1, algoChat.grupos.get(0).integrantes.get(0).cantidadTotalMensajesRecibidos());
-		assertEquals(1, algoChat.grupos.get(0).devolverCantidadEnviados());
+		assertEquals(1, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadTotalMensajesRecibidos());
+		assertEquals(1, algoChat.grupos.get("Mañana").devolverCantidadEnviados());
 		
         
     }
@@ -155,18 +155,18 @@ public class GrupoTest {
 		algoChat.recibirMensajeDeGrupo("Mañana", "Agustin", "texto");
 		algoChat.recibirMensajeDeGrupo("Mañana", "Agustin", "texto");
 		
-		assertEquals(4, algoChat.grupos.get(0).integrantes.get(0).cantidadDeMensajesEnviados());
-		assertEquals(4, algoChat.grupos.get(0).devolverCantidadRecibidos());
+		assertEquals(4, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadDeMensajesEnviados());
+		assertEquals(4, algoChat.grupos.get("Mañana").devolverCantidadRecibidos());
 		
-		algoChat.grupos.get(0).restarMensajeRecibidoDe("Agustin");
+		algoChat.grupos.get("Mañana").restarMensajeRecibidoDe("Agustin");
 		
-		assertEquals(3, algoChat.grupos.get(0).integrantes.get(0).cantidadDeMensajesEnviados());
-		assertEquals(3, algoChat.grupos.get(0).devolverCantidadRecibidos());
+		assertEquals(3, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadDeMensajesEnviados());
+		assertEquals(3, algoChat.grupos.get("Mañana").devolverCantidadRecibidos());
 		
-		algoChat.grupos.get(0).restarMensajeRecibidoDe("Agustin");
+		algoChat.grupos.get("Mañana").restarMensajeRecibidoDe("Agustin");
 		
-		assertEquals(2, algoChat.grupos.get(0).integrantes.get(0).cantidadDeMensajesEnviados());
-		assertEquals(2, algoChat.grupos.get(0).devolverCantidadRecibidos());
+		assertEquals(2, algoChat.grupos.get("Mañana").integrantes.get(0).cantidadDeMensajesEnviados());
+		assertEquals(2, algoChat.grupos.get("Mañana").devolverCantidadRecibidos());
         
     }
 }
